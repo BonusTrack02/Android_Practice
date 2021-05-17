@@ -7,7 +7,7 @@
     tools:context=".ProductActivity">
 
     <Button
-        android:id="@+id/toMenuButton2"
+        android:id="@+id/toMenuButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="메뉴로"
@@ -19,7 +19,7 @@
         app:layout_constraintVertical_bias="0.358" />
 
     <Button
-        android:id="@+id/toLoginButton2"
+        android:id="@+id/toLoginButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
@@ -27,5 +27,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toMenuButton2" />
+        app:layout_constraintTop_toBottomOf="@+id/toMenuButton3" />
 </androidx.constraintlayout.widget.ConstraintLayout>

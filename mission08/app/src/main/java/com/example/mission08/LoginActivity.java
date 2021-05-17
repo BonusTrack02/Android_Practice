@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     public static final int REQUEST_CODE_MENU = 101;
     EditText usernameInput;
     EditText passwordInput;
