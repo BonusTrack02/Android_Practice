@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == REQUEST_CODE_MENU) {
             Toast.makeText(getApplicationContext(), "onActivityResult 메서드 호출됨. 요청 코드 : " + requestCode + ", 결과 코드 : ", Toast.LENGTH_LONG).show();
 
-            if (resultCode ==RESULT_OK) {
+            if (resultCode == RESULT_OK) {
                 String name = data.getStringExtra("name");
                 Toast.makeText(getApplicationContext(), "응답으로 전달된 name : " + name, Toast.LENGTH_LONG).show();
             }
