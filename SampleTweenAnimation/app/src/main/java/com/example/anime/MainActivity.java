@@ -24,5 +24,15 @@ public class MainActivity extends AppCompatActivity {
                 v.startAnimation(anime);
             }
         });
+
+        Button button2 = findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Animation anime = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.scale2);
+
+                v.startAnimation(anime);
+            }
+        });
     }
 }
