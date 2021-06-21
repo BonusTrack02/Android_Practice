@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                setBrightness(i);
                 textView.setText("변경된 값 : " + i);
             }
 
