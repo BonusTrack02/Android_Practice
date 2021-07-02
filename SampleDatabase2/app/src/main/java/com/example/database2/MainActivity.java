@@ -2,6 +2,7 @@ package com.example.database2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -50,6 +51,33 @@ public class MainActivity extends AppCompatActivity {
                 insertRecord();
             }
         });
+
+        Button button3 = findViewById(R.id.button3);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                executeQuery();
+            }
+        });
+    }
+
+    public void executeQuery() {
+        println("executeQuery 호출됨.");
+
+        Cursor cursor = database.rawQuery("select _id, name, age, mobile from emp", null);
+        int recordCount = cursor.getCount();
+        println("레코드 개수 : " + recordCount);
+
+        for (int i=0; i<recordCount; i++) {
+            cursor.moveToNext();
+            int id = cursor.getInt(0);
+            String name = cursor.getString(1);
+            int age = cursor.getInt(2);
+            String mobile = cursor.getString(3);
+
+            println("레코드#" + i + " : " + id + ", " + name + ", " + age + ", " + mobile);
+        }
+        cursor.close();
     }
 
     public void createDatabase(String name) {
