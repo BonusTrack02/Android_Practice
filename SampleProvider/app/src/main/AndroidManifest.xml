@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.provider">
+    <permission android:name="com.example.provider.READ_DATABASE" android:protectionLevel="normal" />
+    <permission android:name="com.example.provider.WRITE_DATABASE" android:protectionLevel="normal" />
 
     <application
         android:allowBackup="true"
@@ -16,6 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <provider
+            android:authorities="com.example.provider"
+            android:name=".PersonProvider"
+            android:exported="true"
+            android:readPermission="com.example.provider.READ_DATABASE"
+            android:writePermission="com.example.provider.WRITE_DATABASE" />
     </application>
 
 </manifest>
