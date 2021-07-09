@@ -3,8 +3,10 @@ package com.example.graphics.custom.drawable;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.Shader;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RectShape;
@@ -70,5 +72,36 @@ public class CustomViewDrawable extends View {
 
         upperDrawable.draw(canvas);
         lowerDrawable.draw(canvas);
+
+        Paint pathPaint = new Paint();
+        pathPaint.setAntiAlias(true);
+        pathPaint.setColor(Color.YELLOW);
+        pathPaint.setStyle(Paint.Style.STROKE);
+        pathPaint.setStrokeWidth(16.0F);
+        pathPaint.setStrokeCap(Paint.Cap.BUTT);
+        pathPaint.setStrokeJoin(Paint.Join.MITER);
+
+        Path path = new Path();
+        path.moveTo(20, 20);
+        path.lineTo(120, 20);
+        path.lineTo(160, 90);
+        path.lineTo(180, 80);
+        path.lineTo(200, 120);
+
+        canvas.drawPath(path, pathPaint);
+
+        pathPaint.setColor(Color.WHITE);
+        pathPaint.setStrokeCap(Paint.Cap.ROUND);
+        pathPaint.setStrokeJoin(Paint.Join.ROUND);
+
+        path.offset(30, 120);
+        canvas.drawPath(path, pathPaint);
+
+        pathPaint.setColor(Color.CYAN);
+        pathPaint.setStrokeCap(Paint.Cap.SQUARE);
+        pathPaint.setStrokeJoin(Paint.Join.BEVEL);
+
+        path.offset(30, 120);
+        canvas.drawPath(path, pathPaint);
     }
 }
