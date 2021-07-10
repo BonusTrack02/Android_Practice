@@ -10,7 +10,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        PaintBoard view = new PaintBoard(this);
+        BestPaintBoard view = new BestPaintBoard(this);
         setContentView(view);
     }
 }
