@@ -121,8 +121,7 @@ public class MainActivity extends AppCompatActivity implements AutoPermissionsLi
 
     @Override
     public void onDenied(int requestCode, String[] permissions) {
-        Toast.makeText(this, "permissions denied : " + permissions.length,
-                Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "permissions denied : " + permissions.length, Toast.LENGTH_LONG).show();
     }
 
     @Override
